@@ -45,6 +45,10 @@ SITE_TEMPLATE = """
             border-bottom: thin solid #dddddd;
         }
 
+        .styled-table tbody tr:hover {
+            background-color: lightyellow;
+        }
+
         .styled-table tbody tr:nth-of-type(even) {
             background-color: #f3f3f3;
         }
