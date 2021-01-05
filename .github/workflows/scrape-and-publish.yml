@@ -10,12 +10,9 @@ jobs:
   scheduled:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out this repo
-      uses: actions/checkout@v2
-    - name: Setup Python
-      uses: actions/setup-python@v2
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
     - name: Fetch latest data
-      uses: actions/setup-python@v2
       run: |-
         pip install Jinja2
         python generate_report.py
