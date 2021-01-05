@@ -58,35 +58,40 @@ SITE_TEMPLATE = """
 <body>
     <div id="content">
         <table class="styled-table">
-            <tr>
-                <th>Resort</th>
-                <th>Snow</th>
-                <th>Open Percent</th>
-                <th>Lifts</th>
-                <th>Trails</th>
-                <th>Acres</th>
-                <th>Snow (24h)</th>
-                <th>Snow (48h)</th>
-                <th>Base Depth</th>
-                <th>Surface Conditions</th>
-                <th>Covid</th>
-                <th>Update Time</th>
-        {% for m in mountains %}
-            <tr>
-                <td>{{m.resortName}}, {{m.state}}</td>
-                <td>{{m.snowComments}}</td>
-                <td>{{m.openDownHillPercent}}%</td>
-                <td>{{m.openDownHillLifts}} of {{m.maxOpenDownHillLifts}}</td>
-                <td>{{m.openDownHillTrails}} of {{m.maxOpenDownHillTrails}}</td>
-                <td>{{m.openDownHillAcres}} of {{m.maxOpenDownHillAcres}}</td>
-                <td>{{m.newSnowMin or 0}}-{{m.newSnowMax or 0}}</td>
-                <td>{{m.snowLast48Hours or 0}}</td>
-                <td>{{m.avgBaseDepthMin}}-{{m.avgBaseDepthMax}}</td>
-                <td>{{m.primarySurfaceCondition}}</td>
-                <td><a href="{{m.resortCovidPage}}">click</a></td>
-                <td>{{m.reportDateTime}}</td>
-            </tr>
-        {% endfor %}
+            <thead>
+                <tr>
+                    <th>Resort</th>
+                    <th>Snow</th>
+                    <th>Open Percent</th>
+                    <th>Lifts</th>
+                    <th>Trails</th>
+                    <th>Acres</th>
+                    <th>Snow (24h)</th>
+                    <th>Snow (48h)</th>
+                    <th>Base Depth</th>
+                    <th>Surface Conditions</th>
+                    <th>Covid</th>
+                    <th>Update Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for m in mountains %}
+                    <tr>
+                        <td>{{m.resortName}}, {{m.state}}</td>
+                        <td>{{m.snowComments}}</td>
+                        <td>{{m.openDownHillPercent}}%</td>
+                        <td>{{m.openDownHillLifts}} of {{m.maxOpenDownHillLifts}}</td>
+                        <td>{{m.openDownHillTrails}} of {{m.maxOpenDownHillTrails}}</td>
+                        <td>{{m.openDownHillAcres}} of {{m.maxOpenDownHillAcres}}</td>
+                        <td>{{m.newSnowMin or 0}}-{{m.newSnowMax or 0}}</td>
+                        <td>{{m.snowLast48Hours or 0}}</td>
+                        <td>{{m.avgBaseDepthMin}}-{{m.avgBaseDepthMax}}</td>
+                        <td>{{m.primarySurfaceCondition}}</td>
+                        <td><a href="{{m.resortCovidPage}}">click</a></td>
+                        <td>{{m.reportDateTime}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
     </div>
 </body>
