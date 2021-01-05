@@ -37,6 +37,7 @@ SITE_TEMPLATE = """
                 <th>Base Depth</th>
                 <th>Surface Conditions</th>
                 <th>Covid</th>
+                <th>Update Time</th>
         {% for m in mountains %}
             <tr>
                 <td>{{m.resortName}}, {{m.state}}</td>
@@ -50,6 +51,7 @@ SITE_TEMPLATE = """
                 <td>{{m.avgBaseDepthMin}}-{{m.avgBaseDepthMax}}</td>
                 <td>{{m.primarySurfaceCondition}}</td>
                 <td><a href="{{m.resortCovidPage}}">click</a></td>
+                <td>{{m.reportDateTime}}</td>
             </tr>
         {% endfor %}
         </table>
